@@ -6,6 +6,23 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 
+// Health check endpoint for Railway
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    message: 'Aviator Game Server Running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'healthy',
+    uptime: process.uptime(),
+    players: players.size
+  });
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {

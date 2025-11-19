@@ -537,8 +537,8 @@ io.on('connection', (socket) => {
     const rawPayout = betAmount * cashoutMultiplier;
     console.log(`🔍 CASHOUT CALCULATION: Bet=${betAmount}, Ticks=${ticks}, Multiplier=${cashoutMultiplier}, Raw=${rawPayout}`);
     
-    // Calculate payout: bet amount × multiplier (rounded to 2 decimals, capped at 10000)
-    const payout = Math.round(Math.min(rawPayout, 10000) * 100) / 100;
+    // Calculate payout: bet amount × multiplier (rounded to 2 decimals, capped at 50000)
+    const payout = Math.round(Math.min(rawPayout, 50000) * 100) / 100;
     const oldBalance = player.balance;
     player.balance = Math.round((player.balance + payout) * 100) / 100;
     

@@ -1,0 +1,87 @@
+✅ ONLINE PLAYERS LIST FEATURE - COMPLETE
+
+AVAILABLE ON BOTH ROUTES:
+Route 1: http://localhost:5173/aviator (MultiplayerAviator - New Aviator Design)
+Route 2: http://localhost:5173/multiplayer (Multiplayer - Classic Design)
+
+WHAT'S NEW:
+============
+Added a separate "Online" container that displays ALL connected players with their names and current balances.
+This container appears BELOW the "Active Players" section on the /aviator page.
+
+LAYOUT:
+=======
+1. Active Players (Top Container)
+   - Shows players who have placed bets this round
+   - Displays bet amounts and status (won/lost/active)
+
+2. Online (Bottom Container) ⭐ NEW
+   - Shows ALL connected players
+   - Displays player names and current balances
+   - Updates in real-time
+
+FEATURES:
+=========
+1. Player information displayed:
+   - Player name with colored avatar (initials)
+   - Current balance for each player
+   - Green "Online" status indicator with pulse animation
+   - "You" label for current player
+   - Unique gradient colors for each player
+
+2. Real-time updates when:
+   - Players join or leave
+   - Players place bets (balance changes)
+   - Players cash out (balance changes)
+   - Players change their name
+
+3. Visual design:
+   - Separate container with dark background
+   - Smooth hover effects
+   - Scrollable list (max height 300px)
+   - Player count in header
+
+HOW TO USE:
+===========
+1. Start the game server: npm run server
+2. Start the client: npm run dev
+3. Open EITHER:
+   - http://localhost:5173/aviator (New Aviator Design)
+   - http://localhost:5173/multiplayer (Classic Design)
+4. Enter your name when prompted
+5. Look for the "Online" container (below Active Players)
+6. You'll see yourself and all other connected players with balances
+
+DEBUGGING:
+==========
+If you don't see online players:
+1. Check browser console (F12) for:
+   - "Connected to server"
+   - "📥 Received online players update: [...]"
+   - "🔍 Online Players State: [...]"
+
+2. Check server console for:
+   - "✅ Player connected: [socket-id]"
+   - "👤 Player [socket-id] set name to: [your-name]"
+   - "📡 Broadcasting X online players"
+
+3. Make sure you're on /aviator or /multiplayer route
+4. Restart server and refresh browser
+
+TECHNICAL DETAILS:
+==================
+Server Changes (server/index.js):
+- Added broadcastOnlinePlayers() function with logging
+- Broadcasts player list on connect/disconnect
+- Broadcasts player list when balance changes (bet/cashout)
+- Broadcasts player list when name changes
+- Removes players from list on disconnect
+
+Client Changes:
+- useMultiplayerGame.ts: Added onlinePlayers state, socketId, and console logging
+- BetsList.tsx: Simplified to show only active bets
+- MultiplayerAviator.tsx: Added separate "Online" container with debug logging
+- Multiplayer.tsx: Added "Online" card below PlayerList with debug logging
+- Displays online players with avatars, names, and balances
+
+The feature is fully functional and ready to use on BOTH /aviator and /multiplayer routes!

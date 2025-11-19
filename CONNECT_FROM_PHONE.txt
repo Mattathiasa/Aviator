@@ -1,0 +1,68 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║          📱 CONNECT FROM YOUR PHONE 📱                   ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+✅ BOTH SERVER AND CLIENT ARE RUNNING!
+
+═══════════════════════════════════════════════════════════
+
+📱 ON YOUR PHONE:
+
+1. Make sure your phone is on the SAME Wi-Fi as your PC
+
+2. Open your phone's web browser (Chrome, Safari, etc.)
+
+3. Type this URL:
+   
+   http://192.168.100.208:8080
+
+4. Press Enter/Go
+
+5. Click the "Multiplayer" button (top right)
+
+6. Look for green "Connected" indicator
+
+7. Start playing!
+
+═══════════════════════════════════════════════════════════
+
+🖥️ ON YOUR PC:
+
+   http://localhost:8080
+
+═══════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING:
+
+❌ Can't connect from phone?
+
+1. Check both devices are on SAME Wi-Fi network
+2. Try disabling Windows Firewall temporarily
+3. Make sure both server and client are running
+4. Try refreshing the page on your phone
+
+❌ Shows "Disconnected"?
+
+1. Check if server is running (should see game rounds in console)
+2. Refresh the page
+3. Check firewall settings
+
+═══════════════════════════════════════════════════════════
+
+🎮 WHAT TO EXPECT:
+
+✅ All players see the SAME multiplier
+✅ Same crash timing for everyone
+✅ Real-time synchronization
+✅ Each player has their own balance (200 birr)
+✅ Place bets during 8-second countdown
+✅ Cash out before crash to win!
+
+═══════════════════════════════════════════════════════════
+
+🔥 READY TO PLAY!
+
+Share this URL with friends:
+http://192.168.100.208:8080

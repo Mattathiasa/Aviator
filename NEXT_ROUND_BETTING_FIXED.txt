@@ -1,0 +1,106 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║      ✅ NEXT ROUND BETTING LOGIC FIXED ✅                ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🎮 FIXED BEHAVIOR:
+
+Bets placed DURING a round are now properly queued for
+the NEXT round, not added to the current round!
+
+═══════════════════════════════════════════════════════════
+
+✅ HOW IT WORKS NOW:
+
+**During Countdown (isBreak = true):**
+- Bets go to `roundBets` array
+- These bets are active for the UPCOMING round
+- Toast: "Bet 1 placed: X birr"
+
+**During Round (isPlaying = true):**
+- Bets go to `nextRoundBets` array
+- These bets are queued for the NEXT round
+- Toast: "Bet 1 placed for NEXT round: X birr"
+- Current round continues unaffected
+
+**After Crash (2 seconds later):**
+- `nextRoundBets` moves to `roundBets`
+- Next round starts with those bets active
+
+═══════════════════════════════════════════════════════════
+
+🔄 ROUND LIFECYCLE:
+
+1. **Countdown Starts:**
+   - Previous round results visible for 2 seconds
+   - Then `nextRoundBets` → `roundBets`
+   - `nextRoundBets` cleared
+   - Players can place bets for upcoming round
+
+2. **Round Starts:**
+   - `roundBets` are active
+   - Players can cash out these bets
+   - New bets go to `nextRoundBets`
+
+3. **During Flight:**
+   - Active bets can be cashed out
+   - New bets placed go to `nextRoundBets`
+   - Message: "Bet placed for NEXT round"
+
+4. **Crash:**
+   - Results shown
+   - After 2 seconds, cycle repeats
+
+═══════════════════════════════════════════════════════════
+
+🎯 EXAMPLE SCENARIO:
+
+**Round 1 Playing (multiplier at 2.5x):**
+- You place Bet 1 (100 birr)
+- Toast: "Bet 1 placed for NEXT round: 100 birr"
+- Bet goes to `nextRoundBets`
+- NOT active in current round
+
+**Round 1 Crashes:**
+- Results shown for 2 seconds
+- Your bet moves to `roundBets`
+
+**Round 2 Starts:**
+- Your Bet 1 is now ACTIVE
+- You can cash out during this round
+
+═══════════════════════════════════════════════════════════
+
+✅ SERVER CHANGES:
+
+1. Added `nextRoundBets` array
+2. Bet placement checks `gameState.isPlaying`
+3. If playing → add to `nextRoundBets`
+4. If break → add to `roundBets`
+5. After crash, move `nextRoundBets` to `roundBets`
+
+═══════════════════════════════════════════════════════════
+
+✅ CLIENT CHANGES:
+
+1. Receives `forNextRound` flag in betPlaced event
+2. Shows different toast message
+3. Bet marked as active (will be active next round)
+
+═══════════════════════════════════════════════════════════
+
+🚀 READY TO TEST:
+
+1. Refresh browser (Ctrl + Shift + R)
+2. Wait for a round to start
+3. While plane is flying, place a bet
+4. See toast: "Bet placed for NEXT round"
+5. Watch current round finish
+6. Your bet becomes active in next round!
+
+═══════════════════════════════════════════════════════════
+
+✨ BETS ARE NOW PROPERLY QUEUED FOR NEXT ROUND! ✨
+
+No more betting on already-started rounds!

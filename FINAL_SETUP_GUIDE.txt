@@ -1,0 +1,217 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║     🎮 AVIATOR MULTIPLAYER - FINAL SETUP GUIDE 🎮        ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+✅ EVERYTHING IS COMPLETE AND READY TO PLAY!
+
+═══════════════════════════════════════════════════════════
+
+🚀 QUICK START (3 STEPS):
+
+1. Make sure both server and client are running:
+   - Server: node server/index.js (port 3001)
+   - Client: npm run dev (port 8080)
+
+2. On your PC, open: http://localhost:8080
+   Click "Multiplayer" button
+
+3. On phones (same Wi-Fi), open: http://192.168.100.208:8080
+   Click "Multiplayer" button
+
+═══════════════════════════════════════════════════════════
+
+🎮 GAME FEATURES:
+
+✅ Real-time multiplayer synchronization
+✅ All players see same multiplier & crash timing
+✅ Background music during gameplay
+✅ Crash sound effects
+✅ Auto-bet and auto-cashout
+✅ Starting balance: 200 birr per player
+✅ Min bet: 1 birr | Max bet: 5,000 birr
+✅ Max win: 10,000 birr per round
+✅ 8-second countdown between rounds
+✅ Multiplier speeds up gradually (like real Aviator)
+
+═══════════════════════════════════════════════════════════
+
+📱 CONNECTION INFO:
+
+Your PC IP: 192.168.100.208
+
+🖥️  On Your PC:
+    http://localhost:8080
+
+📱 On Phones (Same Wi-Fi):
+    http://192.168.100.208:8080
+
+Server URL (Socket.IO):
+    http://192.168.100.208:3001
+
+═══════════════════════════════════════════════════════════
+
+🎯 HOW TO PLAY:
+
+1. WAIT FOR COUNTDOWN (8 seconds)
+   - Bets can only be placed during break time
+   - Watch the countdown timer
+
+2. PLACE YOUR BET
+   - Choose amount (1-5,000 birr)
+   - Up to 2 bets per round
+   - Click "Place Bet"
+   - Balance deducted immediately
+
+3. WATCH MULTIPLIER RISE
+   - Plane takes off at 1.00x
+   - Multiplier increases gradually
+   - Speed increases as it gets higher
+
+4. CASH OUT BEFORE CRASH
+   - Click "Cash Out" to secure winnings
+   - Payout = Bet × Multiplier (max 10,000)
+   - Each bet can be cashed out independently
+
+5. IF YOU DON'T CASH OUT
+   - Plane crashes at random multiplier
+   - You lose your bet
+   - New round starts after 8 seconds
+
+═══════════════════════════════════════════════════════════
+
+🤖 AUTO FEATURES:
+
+AUTO BET:
+- Automatically places same bet each round
+- Useful for continuous play
+- Toggle on/off anytime
+
+AUTO CASH OUT:
+- Automatically cashes out at target multiplier
+- Set your target (e.g., 2.00x)
+- Great for consistent, safe wins
+
+═══════════════════════════════════════════════════════════
+
+🎨 VISUAL FEATURES:
+
+✅ Same layout as single-player mode
+✅ Gradient background
+✅ 3-column responsive layout
+✅ Connection status indicator (green/red)
+✅ Real-time balance updates
+✅ Potential payout display
+✅ Win/loss notifications
+
+═══════════════════════════════════════════════════════════
+
+🔊 AUDIO FEATURES:
+
+✅ Background music during flight
+✅ Music stops when crashed
+✅ Crash sound effect
+✅ Volume: Music 30%, Crash 50%
+✅ Handles browser autoplay restrictions
+
+Note: Audio files needed in /public folder:
+- music.mp3 (background music)
+- crash.mp3 (crash sound)
+
+If files are missing, game works without sound.
+
+═══════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING:
+
+❌ Can't connect from phone?
+   → Check both devices on same Wi-Fi
+   → Disable Windows Firewall temporarily
+   → Verify IP address is correct
+   → Make sure server is running
+
+❌ Shows "Disconnected"?
+   → Check if server is running (port 3001)
+   → Refresh the page
+   → Check .env file has correct IP
+   → Look at server console for errors
+
+❌ No sound?
+   → Add music.mp3 and crash.mp3 to /public folder
+   → Click on page to enable audio (browser restriction)
+   → Check browser console for errors
+
+❌ Multiplier not synchronized?
+   → Refresh all connected devices
+   → Check server console for errors
+   → Verify all clients connected to same server
+
+═══════════════════════════════════════════════════════════
+
+📊 TECHNICAL DETAILS:
+
+Server:
+- Node.js + Express + Socket.IO
+- Port: 3001
+- Controls game state and timing
+- Tracks all player balances
+- Broadcasts updates every 100ms
+
+Client:
+- React + TypeScript + Vite
+- Port: 8080
+- Real-time Socket.IO connection
+- Hot module reloading
+- Responsive design
+
+Game Logic:
+- Crash point generated server-side
+- Weighted random algorithm:
+  • 50% chance: 1.00x - 2.00x
+  • 30% chance: 2.00x - 5.00x
+  • 15% chance: 5.00x - 20.00x
+  • 5% chance: 20.00x - 200.00x
+
+═══════════════════════════════════════════════════════════
+
+📁 PROJECT STRUCTURE:
+
+Aviator/
+├── server/
+│   └── index.js              # Socket.IO server
+├── src/
+│   ├── hooks/
+│   │   ├── useGameLogic.ts   # Single-player logic
+│   │   ├── useMultiplayerGame.ts  # Multiplayer logic
+│   │   └── useGameAudio.ts   # Audio management
+│   ├── pages/
+│   │   ├── Index.tsx         # Home page (single-player)
+│   │   └── Multiplayer.tsx   # Multiplayer page
+│   └── components/
+│       ├── GameDisplay.tsx   # Multiplier display
+│       └── BettingControls.tsx  # Bet controls
+├── .env                      # Server URL config
+└── package.json              # Dependencies
+
+═══════════════════════════════════════════════════════════
+
+🎉 READY TO PLAY!
+
+Both server and client are running.
+Share the URL with friends and start playing!
+
+═══════════════════════════════════════════════════════════
+
+💡 TIPS FOR WINNING:
+
+1. Start with small bets (10-20 birr)
+2. Use auto-cashout at 1.5x-2.0x for safe wins
+3. Don't get greedy - high multipliers are rare
+4. Watch the multiplier speed - it accelerates
+5. Use two bets: one safe, one risky
+6. Manage your bankroll carefully (200 birr total)
+
+═══════════════════════════════════════════════════════════
+
+🏆 HAVE FUN AND GOOD LUCK! 🏆

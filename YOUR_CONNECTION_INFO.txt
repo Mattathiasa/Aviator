@@ -1,0 +1,47 @@
+🎮 YOUR AVIATOR MULTIPLAYER CONNECTION INFO 🎮
+
+═══════════════════════════════════════════════════════════
+
+📍 YOUR PC IP ADDRESS: 192.168.100.208
+
+═══════════════════════════════════════════════════════════
+
+🖥️ ON YOUR PC:
+   Open: http://localhost:8080
+   Then click "Multiplayer" button
+
+📱 ON PHONES/OTHER DEVICES:
+   Open: http://192.168.100.208:8080
+   Then click "Multiplayer" button
+
+═══════════════════════════════════════════════════════════
+
+✅ SERVER STATUS: RUNNING ✓
+   Server Port: 3001
+   Client Port: 8080
+
+═══════════════════════════════════════════════════════════
+
+🚀 TO START PLAYING:
+
+1. Run: start-multiplayer-game.bat
+   (Or manually start server and client)
+
+2. On your PC, open: http://localhost:8080
+
+3. Share with friends: http://192.168.100.208:8080
+
+4. Everyone clicks "Multiplayer" button
+
+5. Look for green "Connected" indicator
+
+6. Start betting and playing together!
+
+═══════════════════════════════════════════════════════════
+
+💡 IMPORTANT:
+- All devices must be on the SAME Wi-Fi network
+- If you can't connect, temporarily disable Windows Firewall
+- The server is already running in the background!
+
+═══════════════════════════════════════════════════════════

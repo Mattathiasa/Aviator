@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.IO Test</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Socket.IO Connection Test</h1>
+    <div id="status">Connecting...</div>
+    <div id="players"></div>
+    <button onclick="requestPlayers()">Request Players</button>
+    
+    <script>
+        const socket = io('http://localhost:3001');
+        
+        socket.on('connect', () => {
+            document.getElementById('status').innerHTML = '✅ Connected: ' + socket.id;
+            console.log('Connected:', socket.id);
+            
+            // Set name
+            socket.emit('setPlayerName', { name: 'TestUser' });
+        });
+        
+        socket.on('onlinePlayersUpdate', ({ players }) => {
+            console.log('📥 Received players:', players);
+            document.getElementById('players').innerHTML = 
+                '<h2>Online Players (' + players.length + '):</h2>' +
+                players.map(p => p.name + ' - ' + p.balance + ' birr').join('<br>');
+        });
+        
+        socket.on('disconnect', () => {
+            document.getElementById('status').innerHTML = '❌ Disconnected';
+        });
+        
+        function requestPlayers() {
+            console.log('Requesting players...');
+            socket.emit('requestOnlinePlayers');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║        ✅ BALANCE UPDATED TO 200 BIRR ✅                 ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🎮 MULTIPLAYER BALANCE CHANGES:
+
+OLD VALUES:
+❌ Starting balance: 50,000 birr
+❌ Max win per round: 50,000 birr
+❌ Default bet amount: 100 birr
+
+NEW VALUES:
+✅ Starting balance: 200 birr
+✅ Max win per round: 10,000 birr
+✅ Default bet amount: 10 birr
+
+═══════════════════════════════════════════════════════════
+
+📊 UPDATED GAME RULES:
+
+Starting Balance: 200 birr
+Min Bet: 1 birr
+Max Bet: 5,000 birr
+Max Win: 10,000 birr per round
+Default Bet: 10 birr
+
+═══════════════════════════════════════════════════════════
+
+🔄 WHAT WAS CHANGED:
+
+✅ Client (useMultiplayerGame.ts):
+   - Starting balance: 200 birr
+   - Default bet amounts: 10 birr
+   - Max payout calculation: 10,000 birr
+
+✅ Server (server/index.js):
+   - Player initialization: 200 birr
+   - Max payout calculation: 10,000 birr
+
+✅ Documentation:
+   - Updated all references to new balance
+   - Updated max win amounts
+
+═══════════════════════════════════════════════════════════
+
+🎯 WHY THIS CHANGE:
+
+The lower starting balance makes the game:
+- More challenging and strategic
+- Encourages careful betting
+- Makes wins more meaningful
+- Better for multiplayer competition
+- More realistic gameplay
+
+═══════════════════════════════════════════════════════════
+
+🚀 READY TO PLAY:
+
+The changes are applied. Refresh your browser to see:
+- New starting balance of 200 birr
+- Default bet amounts of 10 birr
+- Max win capped at 10,000 birr
+
+═══════════════════════════════════════════════════════════
+
+📱 CONNECTION INFO:
+
+🖥️  PC: http://localhost:8080
+📱 Phones: http://192.168.100.208:8080
+
+Click "Multiplayer" and start playing with 200 birr!

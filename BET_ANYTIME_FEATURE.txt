@@ -1,0 +1,87 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║        ✅ BET ANYTIME FEATURE ENABLED ✅                 ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🎮 NEW FEATURE:
+
+Players can now place bets for the NEXT round even while
+the current round is playing!
+
+═══════════════════════════════════════════════════════════
+
+✅ CHANGES MADE:
+
+1. **BettingControls Component:**
+   - Removed `!isBreak` from input disabled conditions
+   - Removed `!isBreak` from quick bet buttons
+   - Removed `!isBreak` from Place Bet buttons
+   - Button text changes:
+     * During break: "Place Bet 1/2"
+     * During round: "Bet for Next Round"
+
+2. **Server:**
+   - Removed isBreak check from bet placement
+   - Bets can now be placed anytime
+   - Bets placed during a round will be active for NEXT round
+
+═══════════════════════════════════════════════════════════
+
+🔄 HOW IT WORKS:
+
+**During Break (Countdown):**
+- Place bets normally
+- Button says "Place Bet 1" / "Place Bet 2"
+- Bets are active for the upcoming round
+
+**During Round (Plane Flying):**
+- Can still adjust bet amounts
+- Can still place bets
+- Button says "Bet for Next Round"
+- Bets will be active for the NEXT round
+- Current round bets can still be cashed out
+
+═══════════════════════════════════════════════════════════
+
+✅ BENEFITS:
+
+1. **No Waiting:** Don't have to wait for countdown to place bets
+2. **Plan Ahead:** Set up your next bet while watching current round
+3. **Flexibility:** Change bet amounts anytime
+4. **Multi-tasking:** Watch current round while preparing next bet
+
+═══════════════════════════════════════════════════════════
+
+🎯 EXAMPLE SCENARIO:
+
+Round 1 Playing:
+- You have an active bet
+- You can cash out anytime
+- You can also prepare Bet 2 for next round
+- Click "Bet for Next Round" button
+- Bet 2 will be active in Round 2
+
+Round 1 Crashes:
+- Your Bet 1 result shows (won/lost)
+- Countdown starts for Round 2
+
+Round 2 Starts:
+- Your Bet 2 is already active!
+- No need to rush during countdown
+
+═══════════════════════════════════════════════════════════
+
+🚀 READY TO TEST:
+
+1. Refresh browser (Ctrl + Shift + R)
+2. Wait for a round to start
+3. While plane is flying:
+   - ✅ Change bet amount
+   - ✅ Click quick bet buttons
+   - ✅ Click "Bet for Next Round"
+4. Your bet will be active next round!
+
+═══════════════════════════════════════════════════════════
+
+✨ BET ANYTIME, NEVER MISS A ROUND! ✨

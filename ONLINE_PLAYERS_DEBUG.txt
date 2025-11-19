@@ -1,0 +1,70 @@
+🔍 ONLINE PLAYERS DEBUGGING GUIDE
+
+ISSUE: Online players list not showing
+
+STEPS TO DEBUG:
+===============
+
+1. RESTART THE SERVER
+   - Stop the server if running (Ctrl+C)
+   - Run: npm run server
+   - Look for: "🎮 Aviator Server running on port 3001"
+
+2. OPEN THE GAME
+   Choose one of these routes:
+   - Go to: http://localhost:5173/aviator (New Aviator Design)
+   - OR go to: http://localhost:5173/multiplayer (Classic Design)
+   - Enter your name when prompted
+   - Click "Start Playing" or "Set"
+
+3. CHECK BROWSER CONSOLE (F12)
+   Look for these messages:
+   - "Connected to server" ✓
+   - "📥 Received online players update: [...]" ✓
+   - "🔍 Online Players State: [...]" (on /aviator) ✓
+   - "🔍 [Multiplayer] Online Players State: [...]" (on /multiplayer) ✓
+
+4. CHECK SERVER CONSOLE
+   Look for these messages:
+   - "✅ Player connected: [socket-id]" ✓
+   - "👤 Player [socket-id] set name to: [your-name]" ✓
+   - "📡 Broadcasting X online players" ✓
+
+5. WHAT YOU SHOULD SEE
+   - Below the "Active Players" section
+   - A container titled "Online (1)" or "Online (2)" etc.
+   - Your name with "(You)" label
+   - Your balance (200.00 ETB)
+   - Green "Online" status indicator
+
+6. TEST WITH MULTIPLE PLAYERS
+   - Open another browser tab/window
+   - Go to: http://localhost:5173/aviator OR /multiplayer
+   - Enter a different name
+   - Both tabs should show 2 online players
+   - You can mix routes (one on /aviator, one on /multiplayer)
+
+COMMON ISSUES:
+==============
+
+Issue 1: "Online (0)" showing
+- Server might not be running
+- Check server console for errors
+- Restart server
+
+Issue 2: Players not updating
+- Check browser console for socket errors
+- Make sure you're on /aviator route (not /multiplayer)
+- Refresh the page
+
+Issue 3: Name shows as "Player"
+- You didn't enter a name
+- Enter name in the modal when it appears
+- Or refresh and enter name again
+
+AVAILABLE ROUTES:
+=================
+✓ http://localhost:5173/aviator  (MultiplayerAviator - NEW AVIATOR DESIGN)
+✓ http://localhost:5173/multiplayer  (Multiplayer - CLASSIC DESIGN)
+
+The online players feature is NOW available on BOTH routes!

@@ -1,0 +1,108 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║      ✅ PLAYER LIST PERSISTENCE FIXED ✅                 ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🐛 PROBLEM IDENTIFIED:
+
+The server was clearing roundBets[] at the START of each round,
+which made all player bets disappear when the game started.
+
+═══════════════════════════════════════════════════════════
+
+✅ SOLUTION IMPLEMENTED:
+
+Changed the server logic to:
+1. Keep bets when round starts
+2. Show all active players during the round
+3. Update results when players cash out
+4. Mark uncashed bets as "lost" when crash happens
+5. Keep results visible for 2 seconds after crash
+6. Clear the list during countdown for next round
+
+═══════════════════════════════════════════════════════════
+
+🔄 NEW ROUND LIFECYCLE:
+
+1. **Countdown (8 seconds):**
+   - Previous round results visible for 2 seconds
+   - Then list clears
+   - Players can place new bets
+   - Bets appear in list as they're placed
+
+2. **Round Starts:**
+   - All placed bets STAY VISIBLE ✅
+   - Players see who's betting and how much
+   - Multiplier starts at 1.00x
+
+3. **During Flight:**
+   - All active bets shown with live stats
+   - Current multiplier updates
+   - Potential payouts update
+   - Players can cash out anytime
+
+4. **Player Cashes Out:**
+   - Their entry turns GREEN immediately
+   - Shows cash out multiplier and payout
+   - Stays green for rest of round
+
+5. **Plane Crashes:**
+   - Uncashed bets turn RED
+   - Shows "Lost X birr"
+   - All results stay visible
+
+6. **After Crash (2 seconds):**
+   - Results persist so everyone can see
+   - Then list clears during countdown
+   - Ready for next round
+
+═══════════════════════════════════════════════════════════
+
+✅ WHAT PLAYERS NOW SEE:
+
+🎮 **During Countdown:**
+   - Other players placing bets appear in list
+   - Can see who's betting and amounts
+
+🚀 **When Round Starts:**
+   - ALL bets stay visible (not cleared!)
+   - See everyone's bet amounts
+   - Live multiplier for each player
+   - Live potential payouts
+
+💰 **When Someone Cashes Out:**
+   - Their entry turns green
+   - Everyone sees they cashed out
+   - Shows their multiplier and winnings
+
+💥 **When Plane Crashes:**
+   - Uncashed bets turn red
+   - Everyone sees who lost
+   - Results persist for 2 seconds
+
+═══════════════════════════════════════════════════════════
+
+🚀 READY TO TEST:
+
+1. Refresh browser (Ctrl + Shift + R)
+2. Open on 2 devices/browsers
+3. Both players place bets
+4. Watch the player list:
+   - ✅ Bets appear as placed
+   - ✅ Stay visible when round starts
+   - ✅ Show live stats during flight
+   - ✅ Turn green when cashed out
+   - ✅ Turn red when crashed
+   - ✅ Persist for 2 seconds after crash
+   - ✅ Clear during countdown
+
+═══════════════════════════════════════════════════════════
+
+✨ PLAYERS NOW STAY VISIBLE THE ENTIRE ROUND! ✨
+
+Everyone can see:
+- Who's betting
+- How much they bet
+- If they cashed out (green)
+- If they lost (red)
